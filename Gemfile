@@ -1,7 +1,8 @@
 source :rubygems
 
-gem 'sinatra'
+gem 'compass'
 gem 'haml'
+gem 'sinatra'
 
 group :development do
   gem 'heroku'
