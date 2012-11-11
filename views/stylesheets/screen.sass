@@ -1,13 +1,226 @@
 @import "base"
+@include establish-baseline
 
-$foreground:   #232323
-$background:   #f7f6f3
-$red:          #e52e4c
+$base:         #f1f2f4
+$foreground:   darken($base, 70%)
+$background:   $base
+$action:       lighten(#a30006, 10%)
+
+$serif:     'pt serif', georgia, serif
+$sans:      ubuntu, helvetica, 'pt sans', 'helvetica neue', arial, sans
+$condensed: 'yanone kaffeesatz', 'ubuntu condensed', 'open sans condensed'
 
 body
+  @include text-shadow(white 0 1px 1px)
   color: $foreground
-  background: $background url('/images/bg.png') top left repeat
-  font: normal normal 16px/1.45 georgia, serif
+  background: $background url(/images/paper.png) top left repeat
+  font: 400 normal 16px/1.45 $sans
+
+h1
+  @include adjust-font-size-to(30px)
+  font-weight: 400
+  font-family: $condensed
+  text-transform: uppercase
+
+h2
+  @include adjust-font-size-to(26px)
+  font-family: $condensed
+  font-weight: 300
+  text-transform: uppercase
+
+h3
+  @include adjust-font-size-to(24px)
+  font-family: $condensed
+  font-weight: 300
+  text-transform: uppercase
+
+p
+  @include margin-trailer(1)
+
+a
+  color: $action
+  text-decoration: none
+
+body > header
+  height: 150px
+  background: transparent url(/images/header-bg.png) top left repeat-x
+  overflow: hidden
+  > span
+    @include container
+    position: relative
+    padding-top: 9px
+    display: block
+    h1
+      @include span-columns(4)
+      position:absolute
+      top: -150px
+      height: 80px
+      padding: 27px 0 30px
+      background: transparent url(/images/ruby-header.png) top left no-repeat
+    nav
+      @include span-columns(8)
+      @include omega
+      @include adjust-font-size-to(22px)
+      margin-top: 41px
+      font-family: $condensed
+      font-weight: 300
+      text-transform: uppercase
+      ul
+        text-align: right
+        li
+          display: inline
+          img
+            width: 100px
 
 
-#main
+body > .main
+  padding: 0 0 3em
+
+body > footer
+  position: relative
+  background: white
+  a
+    height: 10px
+  img
+    @include border-radius(50%)
+    display: block
+    position: relative
+    top: -22px
+    margin: 0 auto
+    width: 36px
+    background: white
+    padding: 10px
+
+#index
+
+
+
+#basic
+  @include container
+
+  header
+    margin-top: $column-width / 2
+    h1
+      @include span-columns(8)
+      @include adjust-font-size-to(66px)
+      @include margin-trailer(.4)
+      font-weight: bold
+
+    nav
+      @include span-columns(4)
+      @include omega
+      @include margin-trailer(1.6)
+      height: 90px
+
+    button
+      @include adjust-font-size-to(16px)
+      @include border-radius(5px)
+      @include background(linear-gradient(top, lighten($action, 5%) $action))
+      @include box-shadow(lighten($action, 40%) 1px 1px 1px inset, grey 0 0 10px)
+      @include text-shadow(darken($action, 20%) 0 1px 1px)
+      position: relative
+      top: 1.35em
+      padding: .7em 1.5em
+      color: whitesmoke
+      border: 1px solid $action
+      font-weight: 300
+      text-transform: uppercase
+      &:active
+        @include box-shadow(darken($action, 15%) 0px 1px 2px inset, grey 0 0 10px)
+        background: $action
+
+      cursor: pointer
+
+    .flexslider
+      @include span-columns(7)
+      @include post(1)
+      @include box-shadow(grey 0 0 10px)
+      @include border-radius(2px)
+      border: 6px solid white
+      .slides
+        height: 16em
+        background: $base
+        li
+          padding: 1.2em .5em
+
+    p
+      @include span-columns(7)
+      @include post(1)
+
+    > aside
+      @include span-columns(4)
+      @include omega
+      ul
+        list-style-image: url('/images/arrow.png')
+        list-style-position: outside
+        font-family: $condensed
+        font-weight: 300
+        text-transform: uppercase
+      li
+        @include adjust-font-size-to(22px)
+        line-height: 1.8em
+
+  section.details
+    @include span-columns(12, 12)
+    overflow: hidden
+    section
+      @include span-columns(7)
+      @include post(1)
+      @include margin-trailer(1)
+    ul
+      list-style-image: url('/images/arrow.png')
+      list-style-position: inside
+      @include margin-trailer(1)
+
+    aside
+      @include span-columns(4)
+      @include omega
+      margin: 1.5em 0 2em
+      img
+        @include box-shadow(grey 0 0 10px)
+        float: left
+        width: 64px
+        margin-right: 1em
+        border: 4px solid white
+        outline: 1px solid gainsboro
+
+      q
+        @include margin-trailer(1)
+        display: block
+        font-style: italic
+        &:before
+          content: '"'
+        cite
+          @include adjust-font-size-to(14px)
+          display: block
+          color: lighten($foreground, 30%)
+          font-style: normal
+          &:before
+            content: '- '
+
+    aside
+      @include span-columns(4)
+      @include omega
+      &:nth-child(4)
+        border-left: 2px solid gainsboro
+      h3
+        padding-left: 1em
+        border-left: 1px solid white
+      ul
+        width: 80%
+        margin: 0
+        padding: 0 0 0 1.5em
+        border-left: 1px solid white
+        list-style: none
+        li
+          padding: .8em 0
+          border-top: 1px solid white
+          border-bottom: 2px solid gainsboro
+          &:first-child
+            border-top: none
+          &:last-child
+            border-bottom: none
+
+
+.flex-active
+  background: $action !important
