@@ -17,11 +17,31 @@
   -# Mobile viewport optimized: j.mp/bplateviewport
   %meta(name="viewport" content="width=device-width, initial-scale=1")
 
+  -# Google web fonts
+  %link(href="http://fonts.googleapis.com/css?family=Ubuntu:400,500|Yanone+Kaffeesatz:300,700" rel="stylesheet" type="text/css")
+
   -# CSS: implied media="all"
+  %link(rel="stylesheet" href="/css/flexslider.css")
   %link(rel="stylesheet" href="/css/screen.css")
+
+  -# Javscripts
+  %script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js")
 
 %body
   %header
-  %section#main
+    %span
+      %h1 Learn you some Ruby
+      %nav
+        %ul
+          %li
+            %a{href: '#'} Cursos
+          %li
+            %a{href: '#'} Acerca de
+          %li
+            %a{href: '#'} Contacto
+
+  %section.main{id: @id}
     =yield
   %footer
+    %a{href: 'http://path11.com'}
+      %img{src: '/images/compass-b.png'}
