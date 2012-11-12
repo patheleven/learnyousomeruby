@@ -77,10 +77,11 @@ body > .main
   padding: 0 0 3em
 
 body > footer
-  position: relative
-  background: white
-  a
-    height: 10px
+  overflow: hidden
+  nav
+    position: relative
+    top: 24px
+    background: darken($base, 85%)
   img
     @include border-radius(50%)
     display: block
@@ -88,7 +89,7 @@ body > footer
     top: -22px
     margin: 0 auto
     width: 36px
-    background: white
+    background: darken($base, 85%)
     padding: 10px
 
 #index
