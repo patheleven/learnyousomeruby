@@ -1,0 +1,7 @@
+/*
+ * This is a manifest file which requires all the root sass files
+ * that need to be managed by the asset pipeline
+ *
+ *= require flexslider
+ *= require screen
+ */
