@@ -8,7 +8,6 @@ gem 'sprockets-sass'
 gem 'susy'
 
 group :development do
-  gem 'heroku'
   gem 'shotgun'
 end
 
