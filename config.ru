@@ -1,8 +1,9 @@
 require 'sprockets'
 require 'sprockets-sass'
 require 'compass'
-require 'sass'
 require './web'
+
+R18n::I18n.default = 'es'
 
 Compass.configuration do |config|
   config.project_path = File.dirname(__FILE__)

@@ -2,17 +2,14 @@
 
 require 'haml'
 require 'sinatra/base'
+require 'sinatra/r18n'
 require 'susy'
 
 class LearnYouSomeRuby < Sinatra::Base
+  register Sinatra::R18n
+
   configure do
     set :haml, { :format => :html5 }
-    set :sass, Compass.sass_engine_options
-  end
-
-  get '/css/screen.css' do
-    content_type 'text/css', :charset => 'utf-8'
-    sass :'stylesheets/screen'
   end
 
   get '/' do
