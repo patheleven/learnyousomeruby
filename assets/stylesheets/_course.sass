@@ -1,0 +1,106 @@
+@mixin course-title
+  @include adjust-font-size-to(66px)
+  @include margin-trailer(.4)
+  font-weight: bold
+
+@mixin course-call-to-action
+  @include adjust-font-size-to(16px)
+  @include border-radius(5px)
+  @include background(linear-gradient(top, lighten($action, 5%) $action))
+  @include box-shadow(lighten($action, 40%) 1px 1px 1px inset, grey 0 0 10px)
+  @include text-shadow(darken($action, 20%) 0 1px 1px)
+  position: relative
+  top: 1.35em
+  padding: .7em 1.5em
+  color: whitesmoke
+  border: 1px solid $action
+  font-weight: 300
+  text-transform: uppercase
+  cursor: pointer
+  &:active
+    @include box-shadow(darken($action, 15%) 0px 1px 2px inset, grey 0 0 10px)
+    background: $action
+
+@mixin course-slides
+  @include box-shadow(grey 0 0 10px)
+  @include border-radius(2px)
+  border: 6px solid white
+
+@mixin course-topic-list
+  list-style-image: url('/images/arrow.png')
+  list-style-position: outside
+  font-family: $condensed
+  font-weight: 300
+  text-transform: uppercase
+  li
+    @include adjust-font-size-to(22px)
+    line-height: 1.8em
+
+@mixin useful-link-list
+  list-style: none
+  li
+    border-top: 1px solid white
+    border-bottom: 2px solid gainsboro
+    &:first-child
+      border-top: none
+    &:last-child
+      border-bottom: none
+    a
+      display: block
+      padding: .8em 0
+      line-height: 1.5em
+      &:hover
+        background: darken($base, 3.5%)
+
+@mixin course
+  @include container
+  header
+    h1
+      @include span-columns(8)
+      @include course-title
+    nav
+      @include span-columns(4)
+      @include omega
+      @include margin-trailer(1.6)
+      height: 90px
+      button
+        @include course-call-to-action
+    .flexslider
+      @include span-columns(7)
+      @include post(1)
+      @include course-slides
+      .slides
+        height: 16em
+        background: $base
+        li
+          padding: 1.2em .5em
+    > aside
+      @include span-columns(4)
+      @include omega
+      ul
+        @include course-topic-list
+
+  section
+    @include span-columns(7)
+    @include post(1)
+    @include margin-trailer(1)
+
+  aside
+    @include span-columns(4)
+    @include omega
+    h3
+      padding-left: 1em
+      border-left: 1px solid white
+    &:nth-child(2)
+      margin: 3.5em 0 4em
+    &:nth-child(5)
+      border-left: 2px solid gainsboro
+      ul
+        @include useful-link-list
+        width: 80%
+        margin: 0
+        padding: 0 0 0 1.5em
+        border-left: 1px solid white
+
+#basic
+  @include course
