@@ -40,7 +40,9 @@ p
 a
   color: $action
   text-decoration: none
-
+  &:hover
+    color: lighten($action, 5%)
+    
 body > header
   height: 150px
   background: transparent url(/images/header-bg.png) top left repeat-x
@@ -51,26 +53,35 @@ body > header
     padding-top: 9px
     display: block
     h1
-      @include span-columns(4)
+      @include span-columns(5)
       position:absolute
       top: -150px
       height: 80px
       padding: 27px 0 30px
       background: transparent url(/images/ruby-header.png) top left no-repeat
     nav
-      @include span-columns(8)
+      @include span-columns(7)
       @include omega
-      @include adjust-font-size-to(22px)
-      margin-top: 41px
+      @include adjust-font-size-to(24px)
+      height: 70px
+      margin-top: 31px
       font-family: $condensed
       font-weight: 300
       text-transform: uppercase
+      overflow: hidden
       ul
-        text-align: right
-        li
-          display: inline
-          img
-            width: 100px
+        overflow: hidden
+      li
+        display: block
+        float: left
+        width: 25%
+        text-align: center
+      a
+        display: block
+        line-height: 70px
+        &:hover
+          color: lighten($action, 5%)
+          background: lighten($base, 3.5%)
 
 
 body > .main
@@ -80,13 +91,13 @@ body > footer
   overflow: hidden
   nav
     position: relative
-    top: 24px
+    top: 28px
     background: darken($base, 85%)
   img
     @include border-radius(50%)
     display: block
     position: relative
-    top: -22px
+    top: -24px
     margin: 0 auto
     width: 36px
     background: darken($base, 85%)
@@ -214,14 +225,28 @@ body > footer
         border-left: 1px solid white
         list-style: none
         li
-          padding: .8em 0
           border-top: 1px solid white
           border-bottom: 2px solid gainsboro
           &:first-child
             border-top: none
           &:last-child
             border-bottom: none
+          a
+            display: block
+            padding: .8em 0
+            line-height: 1.5em
+            &:hover
+              background: darken($base, 3.5%)
+
+
+
+
 
 
 .flex-active
-  background: $action !important
+  background: $action
+  background: darken($base, 30%) !important
+.flex-control-paging li a
+  background: gainsboro
+  &:hover
+    background: darken($base, 20%)
