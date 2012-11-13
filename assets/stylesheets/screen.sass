@@ -74,7 +74,7 @@ body > header
   margin-bottom: $column-width / 2
   background: transparent url(/images/header-bg.png) top left repeat-x
   overflow: hidden
-  > span
+  > section
     @include container
     position: relative
     padding-top: 9px
@@ -140,5 +140,11 @@ body > footer
   background: gainsboro
   &:hover
     background: darken($base, 20%)
+
+$ipad-min-width: 768px
+$ipad-max-width: 1024px
+@media screen and (min-width: $ipad-min-width and (max-width: $ipad-max-width)
+  body
+    background: red
 
 @import 'course'
