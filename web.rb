@@ -3,7 +3,6 @@
 require 'haml'
 require 'sinatra/base'
 require 'sinatra/r18n'
-require 'susy'
 
 class LearnYouSomeRuby < Sinatra::Base
   register Sinatra::R18n

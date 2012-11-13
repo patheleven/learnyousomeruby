@@ -1,9 +1,15 @@
+require 'compass'
 require 'sprockets'
 require 'sprockets-sass'
-require 'compass'
+require 'susy'
 require './web'
 
 R18n::I18n.default = 'es'
+
+LearnYouSomeRuby.configure(:production) do
+  Sprockets::Sass.options[:style] = :compressed
+  Sprockets::Sass.options[:line_comments] = false
+end
 
 Compass.configuration do |config|
   config.project_path = File.dirname(__FILE__)
