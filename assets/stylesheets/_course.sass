@@ -17,6 +17,9 @@
   font-weight: 300
   text-transform: uppercase
   cursor: pointer
+  &:hover
+    @include background(linear-gradient(top, lighten($action, 3%) $action))
+    @include box-shadow(lighten($action, 35%) 1px 1px 1px inset, grey 0 0 10px)
   &:active
     @include box-shadow(darken($action, 15%) 0px 1px 2px inset, grey 0 0 10px)
     background: $action
@@ -52,8 +55,56 @@
       &:hover
         background: darken($base, 3.5%)
 
-@mixin course
-  @include container
+@mixin course-8-columns
+  header
+    h1
+      @include span-columns(5)
+      @include course-title
+    nav
+      @include span-columns(3)
+      @include omega
+      @include margin-trailer(1.6)
+      text-align: right
+      height: 90px
+      button
+        @include course-call-to-action
+    section
+      @include span-columns(8)
+      .flexslider
+        @include course-slides
+        .slides
+          height: 16em
+          background: $base
+          li
+            padding: 1.2em .5em
+    > aside
+      @include span-columns(4)
+      ul
+        @include course-topic-list
+
+  section
+    @include span-columns(8)
+    @include margin-trailer(1)
+
+  aside
+    @include span-columns(4)
+    @include omega
+    h3
+      padding-left: 1em
+      border-left: 1px solid white
+    &:nth-child(2)
+      margin: 3.5em 0 4em
+    &:nth-child(5)
+      border-left: 2px solid gainsboro
+      ul
+        @include useful-link-list
+        width: 80%
+        margin: 0
+        padding: 0 0 0 1.5em
+        border-left: 1px solid white
+
+
+@mixin course-12-columns
   header
     h1
       @include span-columns(8)
@@ -65,15 +116,17 @@
       height: 90px
       button
         @include course-call-to-action
-    .flexslider
+    > section
       @include span-columns(7)
       @include post(1)
-      @include course-slides
-      .slides
-        height: 16em
-        background: $base
-        li
-          padding: 1.2em .5em
+      margin-bottom: 0
+      .flexslider
+        @include course-slides
+        .slides
+          height: 16em
+          background: $base
+          li
+            padding: 1.2em .5em
     > aside
       @include span-columns(4)
       @include omega
@@ -103,4 +156,12 @@
         border-left: 1px solid white
 
 #basic
-  @include course
+  @include container
+  @include at-breakpoint(4)
+    //@include susy-grid-background
+  @include at-breakpoint(8)
+    //@include susy-grid-background
+    @include course-8-columns
+  @include at-breakpoint(12)
+    //@include susy-grid-background
+    @include course-12-columns
