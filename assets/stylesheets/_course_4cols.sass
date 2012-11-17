@@ -7,18 +7,16 @@
       text-align: center
     nav
       @include span-columns(4)
-      @include omega
-      @include margin-trailer(1.6)
-      float: left
-      text-align: right
       height: 70px
+      margin-top: 380px
+      text-align: center
       button
         @include course-call-to-action
-        @include adjust-font-size-to(14px)
-        position: relative
-        top: 1em
+        width: 100%
     section
       @include span-columns(4)
+      margin-top: -420px
+      margin-bottom: 120px
       .flexslider
         @include course-slides
         .slides
@@ -46,4 +44,4 @@
         @include useful-link-list
         width: 85%
         li a
-          padding: .5em 0
+          padding: .8em 0
