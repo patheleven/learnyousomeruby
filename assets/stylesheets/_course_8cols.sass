@@ -1,0 +1,57 @@
+@mixin course-8-columns
+  header
+    h1
+      @include span-columns(6)
+      @include course-title
+      @include adjust-font-size-to(60px)
+    nav
+      @include span-columns(3)
+      @include omega
+      @include margin-trailer(1.6)
+      float: left
+      text-align: right
+      height: 70px
+      button
+        @include course-call-to-action
+        @include adjust-font-size-to(14px)
+        position: relative
+        top: 1em
+    section
+      @include span-columns(5)
+      .flexslider
+        @include course-slides
+        .slides
+          height: 16em
+          background: $base
+          li
+            padding: 1.2em .5em
+    > aside
+      @include span-columns(4)
+      @include omega
+      ul
+        @include course-topic-list
+        list-style-position: inside
+
+  section
+    @include margin-trailer(1)
+    @include span-columns(4)
+    @include post(1)
+    &:nth-child(4)
+      @include span-columns(4)
+      @include post(1)
+    &:nth-child(5)
+      @include span-columns(4)
+      @include margin-trailer(0)
+  aside
+    &:nth-child(3)
+      @include span-columns(4)
+      margin-top: 1em
+      q
+        min-height: 90px
+    &:nth-child(6)
+      @include span-columns(4)
+      ul
+        @include useful-link-list
+        width: 85%
+        li a
+          padding: .4em 0

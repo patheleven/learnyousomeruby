@@ -1,0 +1,55 @@
+@mixin course-12-columns
+  header
+    h1
+      @include span-columns(8)
+      @include course-title
+    nav
+      @include span-columns(4)
+      @include omega
+      @include margin-trailer(1.6)
+      height: 90px
+      button
+        @include course-call-to-action
+        position: relative
+        top: 1.35em
+    > section
+      @include span-columns(7)
+      @include post(1)
+      margin-bottom: 0
+      .flexslider
+        @include course-slides
+        .slides
+          height: 16em
+          background: $base
+          li
+            padding: 1.2em .5em
+    > aside
+      @include span-columns(4)
+      @include omega
+      ul
+        @include course-topic-list
+
+  section
+    @include span-columns(7)
+    @include post(1)
+    @include margin-trailer(1)
+
+  aside
+    @include span-columns(4)
+    @include omega
+    h3
+      padding-left: 1em
+      border-left: 1px solid white
+    &:nth-child(3)
+      margin: 2em 0 4em
+      q:last-child
+        display: none
+    &:nth-child(6)
+      border-left: 2px solid gainsboro
+      margin-top: -230px
+      ul
+        @include useful-link-list
+        width: 80%
+        margin: 0
+        padding: 0 0 0 1.5em
+        border-left: 1px solid white
