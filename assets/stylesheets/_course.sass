@@ -59,9 +59,9 @@
 
 #basic
   @include container
-  @include at-breakpoint(4 38.999em)
+  @include at-breakpoint(4 $iphone-max-width)
     @include course-4-columns
-  @include at-breakpoint(39em 9 58.999em)
+  @include at-breakpoint($ipad-min-width 9 $ipad-max-width)
     @include course-8-columns
-  @include at-breakpoint(59em 12)
+  @include at-breakpoint($normal-width 12)
     @include course-12-columns

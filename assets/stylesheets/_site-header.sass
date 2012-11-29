@@ -1,0 +1,67 @@
+@mixin site-header-4columns
+
+@mixin site-header-8columns
+  >section
+    @include container
+    h1
+      @include span-columns(3)
+      @include pre(3)
+      height: 80px
+      padding: 27px 0 30px
+      background: transparent url(/images/ruby-header.png) top center no-repeat
+    nav
+      @include span-columns(3)
+
+
+@mixin site-header-12columns
+  >section
+    h1
+      @include span-columns(5)
+      position:absolute
+      top: -150px
+      height: 80px
+      padding: 27px 0 30px
+      background: transparent url(/images/ruby-header.png) top left no-repeat
+    nav
+      @include span-columns(7)
+      @include omega
+
+@mixin site-header
+  height: 150px
+  margin-bottom: $column-width / 2
+  background: transparent url(/images/header-bg.png) top left repeat-x
+  overflow: hidden
+  >section
+    @include container
+    position: relative
+    padding-top: 9px
+    display: block
+    nav
+      @include adjust-font-size-to(24px)
+      height: 70px
+      margin-top: 31px
+      font-family: $condensed
+      font-weight: 300
+      text-transform: uppercase
+      overflow: hidden
+      ul
+        overflow: hidden
+      li
+        display: block
+        float: left
+        width: 25%
+        text-align: center
+      a
+        display: block
+        line-height: 70px
+        &:hover
+          color: lighten($action, 5%)
+          background: lighten(gainsboro, 12.5%)
+
+
+  @include at-breakpoint(4 $iphone-max-width)
+    @include site-header-4columns
+  @include at-breakpoint($ipad-min-width 9 $ipad-max-width)
+    @include site-header-8columns
+  @include at-breakpoint($normal-width 12)
+    @include site-header-12columns

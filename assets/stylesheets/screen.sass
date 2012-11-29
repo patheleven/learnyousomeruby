@@ -1,4 +1,5 @@
 @import 'base'
+@import 'site-header'
 @include establish-baseline
 
 $base:         #f1f2f4
@@ -76,46 +77,7 @@ q
       content: '- '
 
 body > header
-  height: 150px
-  margin-bottom: $column-width / 2
-  background: transparent url(/images/header-bg.png) top left repeat-x
-  overflow: hidden
-  > section
-    @include container
-    position: relative
-    padding-top: 9px
-    display: block
-    h1
-      @include span-columns(5)
-      position:absolute
-      top: -150px
-      height: 80px
-      padding: 27px 0 30px
-      background: transparent url(/images/ruby-header.png) top left no-repeat
-    nav
-      @include span-columns(7)
-      @include omega
-      @include adjust-font-size-to(24px)
-      height: 70px
-      margin-top: 31px
-      font-family: $condensed
-      font-weight: 300
-      text-transform: uppercase
-      overflow: hidden
-      ul
-        overflow: hidden
-      li
-        display: block
-        float: left
-        width: 25%
-        text-align: center
-      a
-        display: block
-        line-height: 70px
-        &:hover
-          color: lighten($action, 5%)
-          background: lighten(gainsboro, 12.5%)
-
+  @include site-header
 
 body > .main
   padding: 0 0 3em
