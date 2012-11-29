@@ -1,5 +1,5 @@
 
 desc 'run the website'
 task :run do
-  exec 'shotgun ./web.rb'
+  exec 'shotgun -p 8583'
 end
