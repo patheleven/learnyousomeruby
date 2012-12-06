@@ -1,0 +1,12 @@
+@import 'landing_4cols'
+@import 'landing_8cols'
+@import 'landing_12cols'
+
+#landing
+  @include container
+  @include at-breakpoint(4 $iphone-max-width)
+    @include landing-4-columns
+  @include at-breakpoint($ipad-min-width 9 $ipad-max-width)
+    @include landing-8-columns
+  @include at-breakpoint($normal-width 12)
+    @include landing-12-columns

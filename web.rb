@@ -12,7 +12,7 @@ class LearnYouSomeRuby < Sinatra::Base
   end
 
   get '/' do
-    @id    = 'index'
+    @id    = 'landing'
     @title = 'Learn you some Ruby'
     haml :index
   end
