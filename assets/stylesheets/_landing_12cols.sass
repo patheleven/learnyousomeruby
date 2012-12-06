@@ -16,11 +16,13 @@
 
   #content
     background: $darkbase
-    padding: 2em
+    padding-top: 2em
     section
       @include container
-      margin: 5em 0
-    .box
-      @include span-columns(4, 12)
-      @include nth-omega(3n)
-      min-height: 20em
+      margin-top: 5em
+      .inner
+        @include span-columns(12)
+    .course
+      @include span-columns(6, 12)
+      @include nth-omega(2)
+      background: $course-background
