@@ -1,1 +1,14 @@
 @mixin landing-12-columns
+  #hero
+    @include span-columns(12)
+    img
+      @include span-columns(4, 12)
+    aside
+      @include span-columns(8 omega, 12)
+  
+  .content
+    @include span-columns(12)
+  .box
+    @include span-columns(4, 12)
+    @include nth-omega(3n)
+    min-height: 20em
