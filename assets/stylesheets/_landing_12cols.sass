@@ -27,16 +27,18 @@
     background-size: 400px
     min-height: 120px
 
-  #landing
+  #announcement
     background: $darkbase
+    padding-bottom: 2em
+    border-bottom: 10px darken($darkbase, 5%) solid
+    color: darken($base, 10%)
+    @include text-shadow(darken($darkbase, 10%) 0 1px 1px)
+    > h1
+      text-align: center
+      padding-top: 5em
+      padding-bottom: 1em
     section
       @include container
-      > h1
-        text-align: center
-        padding-top: 5em
-        padding-bottom: 1em
-    .inner
-      @include span-columns(12)
     .course
       @include span-columns(5, 12)
       @include nth-omega(2)
@@ -67,3 +69,36 @@
         text-shadow: none
         &:hover
           background: darken($darkbase, 2%)
+
+  #why
+    padding: 3em 0
+    section
+      @include container
+    .box
+      @include span-columns(5, 12)
+      @include nth-omega(2n)
+      min-height: 10em
+
+  #instructors
+    section
+      @include container
+      > h1
+        font-weight: bold
+        font-size: 3em
+        text-align: center
+        padding: 1em 0
+    .box
+      @include span-columns(5, 12)
+      @include nth-omega(2n)
+      position: relative
+      h1
+        display: inline
+        line-height: 2.5em
+        margin-left: 3em
+      img
+        width: 20%
+        position: absolute
+        top: 0
+        left: 0
+      p
+        padding: 1em
