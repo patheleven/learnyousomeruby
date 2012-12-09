@@ -13,20 +13,27 @@
       text-align: center
       padding-bottom: 2em
       color: $darkbase
-    img
+    #ruty
       display: block
       margin: 0 auto
       width: 30%
-      margin-bottom: -8em
+      margin-bottom: -300px
+
+  #landscape
+    background-image: url('/images/landscape.png')
+    background-position: center
+    background-repeat: repeat-x
+    background-size: 400px
+    min-height: 120px
 
   #landing
     background: $darkbase
-    padding-top: 2em
     section
       @include container
       > h1
         text-align: center
-        padding: 2em 0
+        padding-top: 5em
+        padding-bottom: 1em
     .inner
       @include span-columns(12)
     .course
