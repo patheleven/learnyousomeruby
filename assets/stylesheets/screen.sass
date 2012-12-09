@@ -8,7 +8,7 @@ $sans:      ubuntu, helvetica, arial, sans
 $condensed: 'yanone kaffeesatz'
 
 body
-  @include text-shadow(white 0 1px 1px)
+  @include text-shadow(darken($darkbase, 10%) 0 1px 1px)
   color: $foreground
   background: $background url(/images/paper.png) top left repeat
   font: 400 normal 16px/1.45 $sans

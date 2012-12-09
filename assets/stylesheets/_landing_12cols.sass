@@ -1,28 +1,41 @@
 @mixin landing-12-columns
   #hero
+    @include text-shadow(white 0 1px 1px)
+    section
+      padding: 3em 0
+      @include container
     h1
       text-align: center
       font-size: 4em
       color: $red
+      line-height: 1em
     h2
       text-align: center
+      padding-bottom: 2em
+      color: $darkbase
     img
       display: block
       margin: 0 auto
-      width: 40%
+      width: 30%
       margin-bottom: -8em
-    section
-      @include container
 
-  #content
+  #landing
     background: $darkbase
     padding-top: 2em
     section
       @include container
-      margin-top: 5em
-      .inner
-        @include span-columns(12)
+      > h1
+        text-align: center
+        padding: 2em 0
+    .inner
+      @include span-columns(12)
     .course
-      @include span-columns(6, 12)
+      @include span-columns(4, 12)
       @include nth-omega(2)
-      background: $course-background
+      color: $course-foreground
+      h1
+        text-align: center
+      a
+        text-align: right
+        background: $course-foreground
+        padding: .4em 1em
