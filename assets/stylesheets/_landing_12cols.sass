@@ -107,6 +107,14 @@
       text-align: center
     section
       @include container
+      figure
+        @include span-columns(6, 12)
+        img
+          width: 100%
+      aside
+        @include span-columns(6 omega, 12)
+        img
+          width: 20%
       .box
         min-height: 10em
 
