@@ -94,15 +94,13 @@
 
   #instructors
     @include text-shadow(darken($darkbase, 10%) 0 1px 1px)
-    color: $base
+    padding: 1em 0 0
+    color: darken($base, 8%)
     background: lighten($darkbase, 10%)
+    border-top: 7px solid darken($darkbase, 5%)
     > h1
       display: block
-      font-weight: bold
-      font-size: 3em
-      margin-bottom: 1em
-      color: $red
-      background: darken($darkbase, 5%)
+      margin-bottom: 2em
       text-align: center
     section
       @include container
