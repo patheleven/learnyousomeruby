@@ -98,7 +98,7 @@
 
   #instructors
     @include text-shadow(darken($darkbase, 10%) 0 1px 1px)
-    padding: 1em 0 0
+    padding: 3em 0 2em
     color: darken($base, 8%)
     background: lighten($darkbase, 10%)
     border-top: 7px solid darken($darkbase, 5%)
@@ -111,13 +111,24 @@
       figure
         @include span-columns(6, 12)
         img
+          margin-top: 3em
           width: 100%
       aside
-        @include span-columns(6 omega, 12)
-        img
-          width: 20%
-      .box
-        min-height: 10em
+        @include span-columns(5 omega, 12)
+        article
+          position: relative
+          margin-bottom: 2em
+          img
+            width: 20%
+            position: absolute
+            top: 0
+            left: 0
+          h1
+            display: inline
+            line-height: 2.5em
+            margin-left: 3em
+          p
+            margin: 1em 0
 
   #more-info
     section
