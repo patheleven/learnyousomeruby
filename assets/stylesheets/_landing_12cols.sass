@@ -91,6 +91,11 @@
         padding: 1em 0
 
   #instructors
+    @include text-shadow(darken($darkbase, 10%) 0 1px 1px)
+    padding: 3em 0 0
+    color: darken($base, 10%)
+    background: lighten($darkbase, 10%)
+    border-top: 7px darken($darkbase, 5%) solid
     section
       @include container
       > h1
