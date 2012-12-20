@@ -1,4 +1,21 @@
 @mixin landing-12-columns
+  .box
+    @include span-columns(5, 12)
+    @include nth-omega(2n)
+    position: relative
+    min-height: 20em
+    h1
+      display: inline
+      line-height: 2.5em
+      margin-left: 3em
+    img
+      width: 20%
+      position: absolute
+      top: 0
+      left: 0
+    p
+      padding: 1em 0
+
   #hero
     @include text-shadow(white 0 1px 1px)
     section
@@ -74,21 +91,6 @@
     padding: 3em 0
     section
       @include container
-    .box
-      @include span-columns(5, 12)
-      @include nth-omega(2n)
-      position: relative
-      h1
-        display: inline
-        line-height: 2.5em
-        margin-left: 3em
-      img
-        width: 20%
-        position: absolute
-        top: 0
-        left: 0
-      p
-        padding: 1em 0
 
   #instructors
     section
@@ -98,21 +100,6 @@
         font-size: 3em
         border-bottom: 7px darken($base, 5%) solid
         margin-bottom: 1em
-    .box
-      @include span-columns(5, 12)
-      @include nth-omega(2n)
-      position: relative
-      h1
-        display: inline
-        line-height: 2.5em
-        margin-left: 3em
-      img
-        width: 20%
-        position: absolute
-        top: 0
-        left: 0
-      p
-        padding: 1em 0
   #more-info
     section
       @include container
@@ -121,24 +108,3 @@
         font-size: 3em
         border-bottom: 7px darken($base, 5%) solid
         margin-bottom: 1em
-    .box
-      min-height: 14em
-      margin-bottom: 1em
-      &:nth-child(2n-1)
-        @include span-columns(5, 12)
-        background: aliceblue
-      &:nth-child(2n)
-        @include span-columns(5, 12)
-        @include omega
-        background: tomato
-      h1
-        display: inline
-        line-height: 2.5em
-        margin-left: 3em
-      img
-        width: 20%
-        position: absolute
-        top: 0
-        left: 0
-      p
-        padding: 1em 0
